@@ -33,8 +33,7 @@ var TaskService = (function () {
     };
     //应该传一个任务列表Task[] 而不是 Task
     p.getTaskByCustomRole = function (rule) {
-        var temp = rule();
-        return this.taskList["01"];
+        return rule(this.taskList); //rule(this.taskList);
     };
     p.accept = function (id) {
         //JudgeValue
@@ -42,7 +41,6 @@ var TaskService = (function () {
         if (temp.status == TaskStatus.ACCEPTABLE)
             temp.status = TaskStatus.DURING;
         this.notify(temp);
-        console.log("yea");
     };
     p.finish = function (id) {
         if (id == null) {
@@ -51,7 +49,6 @@ var TaskService = (function () {
         var temp = this.taskList[id];
         if (temp.status == TaskStatus.CAN_SUBMIT) {
             temp.status = TaskStatus.SUBMITTED;
-            console.log(temp.Id + " finish");
             this.notify(temp);
             return;
         }

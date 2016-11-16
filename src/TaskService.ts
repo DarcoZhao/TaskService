@@ -38,9 +38,8 @@ class TaskService {
     }
 
     //应该传一个任务列表Task[] 而不是 Task
-    public getTaskByCustomRole(rule: Function): Task {
-        var temp: Task = rule();
-        return this.taskList["01"];
+    public getTaskByCustomRole(rule: Function): Task[] {
+        return rule(this.taskList);//rule(this.taskList);
     }
 
     public accept(id: string): void {

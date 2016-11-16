@@ -26,11 +26,6 @@ var Task = (function () {
             return this.name;
         }
     );
-    d(p, "Desc"
-        ,function () {
-            return this.desc;
-        }
-    );
     d(p, "FromNpcId"
         ,function () {
             return this.fromNpcId;
@@ -39,48 +34,4 @@ var Task = (function () {
     return Task;
 }());
 egret.registerClass(Task,'Task');
-/*
-class Task {
-    private id: string;
-    private name: string;
-    private desc: string;
-    private status: TaskStatus;
-
-    constructor(id: string, name: string) {
-        this.id = id;
-        this.name = name;
-        this.desc = "";
-        this.status = TaskStatus.UNACCEPTABLE;
-    }
-
-    public get Id() {
-        return this.id;
-    }
-
-    public get State() {
-        return this.status;
-    }
-
-    public get Desc() {
-        return this.desc;
-    }
-
-    public get Status() {
-        return this.status;
-    }
-}
-
-class Task_FindNpc extends Task {
-
-    private fromNpcId: string;
-    public toNpcId: string;
-
-    constructor(id: string, name: string, fromNpcId: string, toNpcId: string) {
-        super(id, name);
-        this.fromNpcId = fromNpcId;
-        this.toNpcId = toNpcId;
-    }
-
-}
-*/ 
 //# sourceMappingURL=Task.js.map

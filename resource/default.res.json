@@ -1,0 +1,815 @@
+{
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,description_json,Task_Emoji_NewTask_png,Task_Emoji_DuringTask_png,Task_Emoji_UnAcceptableTask_png,Task_Emoji_CanSubmitTask_png,idle_back_001_png,idle_back_002_png,idle_back_003_png,idle_back_004_png,idle_back_005_png,idle_back_006_png,idle_back_007_png,idle_back_008_png,idle_back_009_png,idle_back_010_png,idle_back_011_png,idle_back_012_png,idle_back_013_png,idle_back_014_png,idle_back_015_png,idle_front_001_png,idle_front_002_png,idle_front_003_png,idle_front_004_png,idle_front_005_png,idle_front_006_png,idle_front_007_png,idle_front_008_png,idle_front_009_png,idle_front_010_png,idle_front_011_png,idle_front_012_png,idle_front_013_png,idle_front_014_png,idle_front_015_png,idle_left_001_png,idle_left_002_png,idle_left_003_png,idle_left_004_png,idle_left_005_png,idle_left_006_png,idle_left_007_png,idle_left_008_png,idle_left_009_png,idle_left_010_png,idle_left_011_png,idle_left_012_png,idle_left_013_png,idle_left_014_png,idle_left_015_png,idle_right_001_png,idle_right_002_png,idle_right_003_png,idle_right_004_png,idle_right_005_png,idle_right_006_png,idle_right_007_png,idle_right_008_png,idle_right_009_png,idle_right_010_png,idle_right_011_png,idle_right_012_png,idle_right_013_png,idle_right_014_png,idle_right_015_png,run_back_001_png,run_back_002_png,run_back_003_png,run_back_004_png,run_back_005_png,run_back_006_png,run_back_007_png,run_back_008_png,run_back_009_png,run_back_010_png,run_back_011_png,run_back_012_png,run_back_013_png,run_back_014_png,run_back_015_png,run_back_016_png,run_back_017_png,run_back_018_png,run_front_001_png,run_front_002_png,run_front_003_png,run_front_004_png,run_front_005_png,run_front_006_png,run_front_007_png,run_front_008_png,run_front_009_png,run_front_010_png,run_front_011_png,run_front_012_png,run_front_013_png,run_front_014_png,run_front_015_png,run_front_016_png,run_front_017_png,run_front_018_png,run_left_001_png,run_left_002_png,run_left_003_png,run_left_004_png,run_left_005_png,run_left_006_png,run_left_007_png,run_left_008_png,run_left_009_png,run_left_010_png,run_left_011_png,run_left_012_png,run_left_013_png,run_left_014_png,run_left_015_png,run_left_016_png,run_left_017_png,run_left_018_png,run_right_001_png,run_right_002_png,run_right_003_png,run_right_004_png,run_right_005_png,run_right_006_png,run_right_007_png,run_right_008_png,run_right_009_png,run_right_010_png,run_right_011_png,run_right_012_png,run_right_013_png,run_right_014_png,run_right_015_png,run_right_016_png,run_right_017_png,run_right_018_png,Grid_Grass_jpg,Grid_Road_jpg,Npc_Beauty_00001_png,Npc_Beauty_00002_png,Npc_Beauty_00003_png,Npc_Beauty_00004_png,Npc_Beauty_00005_png,Npc_Beauty_00006_png,Npc_Beauty_00007_png,Npc_Beauty_00008_png,Npc_Beauty_00009_png,Npc_Beauty_00010_png,Npc_Beauty_00011_png,Npc_Beauty_00012_png,Npc_Beauty_00013_png,Npc_Beauty_00014_png,Npc_Beauty_00015_png,Npc_Beauty_00016_png,Npc_Beauty_00017_png,Npc_Beauty_00018_png,Npc_Beauty_00019_png,Npc_Beauty_00020_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg_jpg",
+			"type": "image",
+			"url": "assets/bg.jpg"
+		},
+		{
+			"name": "egret_icon_png",
+			"type": "image",
+			"url": "assets/egret_icon.png"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "Task_Emoji_NewTask_png",
+			"type": "image",
+			"url": "assets/Task_Emoji_NewTask.png"
+		},
+		{
+			"name": "Task_Emoji_DuringTask_png",
+			"type": "image",
+			"url": "assets/Task_Emoji_DuringTask.png"
+		},
+		{
+			"name": "Task_Emoji_UnAcceptableTask_png",
+			"type": "image",
+			"url": "assets/Task_Emoji_UnAcceptableTask.png"
+		},
+		{
+			"name": "Task_Emoji_CanSubmitTask_png",
+			"type": "image",
+			"url": "assets/Task_Emoji_CanSubmitTask.png"
+		},
+		{
+			"name": "idle_back_001_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_001.png"
+		},
+		{
+			"name": "idle_back_002_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_002.png"
+		},
+		{
+			"name": "idle_back_003_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_003.png"
+		},
+		{
+			"name": "idle_back_004_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_004.png"
+		},
+		{
+			"name": "idle_back_005_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_005.png"
+		},
+		{
+			"name": "idle_back_006_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_006.png"
+		},
+		{
+			"name": "idle_back_007_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_007.png"
+		},
+		{
+			"name": "idle_back_008_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_008.png"
+		},
+		{
+			"name": "idle_back_009_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_009.png"
+		},
+		{
+			"name": "idle_back_010_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_010.png"
+		},
+		{
+			"name": "idle_back_011_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_011.png"
+		},
+		{
+			"name": "idle_back_012_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_012.png"
+		},
+		{
+			"name": "idle_back_013_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_013.png"
+		},
+		{
+			"name": "idle_back_014_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_014.png"
+		},
+		{
+			"name": "idle_back_015_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_back_015.png"
+		},
+		{
+			"name": "idle_front_001_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_001.png"
+		},
+		{
+			"name": "idle_front_002_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_002.png"
+		},
+		{
+			"name": "idle_front_003_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_003.png"
+		},
+		{
+			"name": "idle_front_004_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_004.png"
+		},
+		{
+			"name": "idle_front_005_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_005.png"
+		},
+		{
+			"name": "idle_front_006_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_006.png"
+		},
+		{
+			"name": "idle_front_007_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_007.png"
+		},
+		{
+			"name": "idle_front_008_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_008.png"
+		},
+		{
+			"name": "idle_front_009_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_009.png"
+		},
+		{
+			"name": "idle_front_010_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_010.png"
+		},
+		{
+			"name": "idle_front_011_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_011.png"
+		},
+		{
+			"name": "idle_front_012_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_012.png"
+		},
+		{
+			"name": "idle_front_013_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_013.png"
+		},
+		{
+			"name": "idle_front_014_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_014.png"
+		},
+		{
+			"name": "idle_front_015_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_front_015.png"
+		},
+		{
+			"name": "idle_left_001_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_001.png"
+		},
+		{
+			"name": "idle_left_002_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_002.png"
+		},
+		{
+			"name": "idle_left_003_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_003.png"
+		},
+		{
+			"name": "idle_left_004_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_004.png"
+		},
+		{
+			"name": "idle_left_005_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_005.png"
+		},
+		{
+			"name": "idle_left_006_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_006.png"
+		},
+		{
+			"name": "idle_left_007_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_007.png"
+		},
+		{
+			"name": "idle_left_008_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_008.png"
+		},
+		{
+			"name": "idle_left_009_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_009.png"
+		},
+		{
+			"name": "idle_left_010_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_010.png"
+		},
+		{
+			"name": "idle_left_011_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_011.png"
+		},
+		{
+			"name": "idle_left_012_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_012.png"
+		},
+		{
+			"name": "idle_left_013_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_013.png"
+		},
+		{
+			"name": "idle_left_014_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_014.png"
+		},
+		{
+			"name": "idle_left_015_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_left_015.png"
+		},
+		{
+			"name": "idle_right_001_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_001.png"
+		},
+		{
+			"name": "idle_right_002_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_002.png"
+		},
+		{
+			"name": "idle_right_003_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_003.png"
+		},
+		{
+			"name": "idle_right_004_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_004.png"
+		},
+		{
+			"name": "idle_right_005_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_005.png"
+		},
+		{
+			"name": "idle_right_006_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_006.png"
+		},
+		{
+			"name": "idle_right_007_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_007.png"
+		},
+		{
+			"name": "idle_right_008_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_008.png"
+		},
+		{
+			"name": "idle_right_009_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_009.png"
+		},
+		{
+			"name": "idle_right_010_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_010.png"
+		},
+		{
+			"name": "idle_right_011_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_011.png"
+		},
+		{
+			"name": "idle_right_012_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_012.png"
+		},
+		{
+			"name": "idle_right_013_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_013.png"
+		},
+		{
+			"name": "idle_right_014_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_014.png"
+		},
+		{
+			"name": "idle_right_015_png",
+			"type": "image",
+			"url": "assets/Player/idle/idle_right_015.png"
+		},
+		{
+			"name": "run_back_001_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_001.png"
+		},
+		{
+			"name": "run_back_002_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_002.png"
+		},
+		{
+			"name": "run_back_003_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_003.png"
+		},
+		{
+			"name": "run_back_004_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_004.png"
+		},
+		{
+			"name": "run_back_005_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_005.png"
+		},
+		{
+			"name": "run_back_006_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_006.png"
+		},
+		{
+			"name": "run_back_007_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_007.png"
+		},
+		{
+			"name": "run_back_008_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_008.png"
+		},
+		{
+			"name": "run_back_009_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_009.png"
+		},
+		{
+			"name": "run_back_010_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_010.png"
+		},
+		{
+			"name": "run_back_011_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_011.png"
+		},
+		{
+			"name": "run_back_012_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_012.png"
+		},
+		{
+			"name": "run_back_013_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_013.png"
+		},
+		{
+			"name": "run_back_014_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_014.png"
+		},
+		{
+			"name": "run_back_015_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_015.png"
+		},
+		{
+			"name": "run_back_016_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_016.png"
+		},
+		{
+			"name": "run_back_017_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_017.png"
+		},
+		{
+			"name": "run_back_018_png",
+			"type": "image",
+			"url": "assets/Player/run/run_back_018.png"
+		},
+		{
+			"name": "run_front_001_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_001.png"
+		},
+		{
+			"name": "run_front_002_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_002.png"
+		},
+		{
+			"name": "run_front_003_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_003.png"
+		},
+		{
+			"name": "run_front_004_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_004.png"
+		},
+		{
+			"name": "run_front_005_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_005.png"
+		},
+		{
+			"name": "run_front_006_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_006.png"
+		},
+		{
+			"name": "run_front_007_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_007.png"
+		},
+		{
+			"name": "run_front_008_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_008.png"
+		},
+		{
+			"name": "run_front_009_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_009.png"
+		},
+		{
+			"name": "run_front_010_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_010.png"
+		},
+		{
+			"name": "run_front_011_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_011.png"
+		},
+		{
+			"name": "run_front_012_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_012.png"
+		},
+		{
+			"name": "run_front_013_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_013.png"
+		},
+		{
+			"name": "run_front_014_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_014.png"
+		},
+		{
+			"name": "run_front_015_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_015.png"
+		},
+		{
+			"name": "run_front_016_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_016.png"
+		},
+		{
+			"name": "run_front_017_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_017.png"
+		},
+		{
+			"name": "run_front_018_png",
+			"type": "image",
+			"url": "assets/Player/run/run_front_018.png"
+		},
+		{
+			"name": "run_left_001_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_001.png"
+		},
+		{
+			"name": "run_left_002_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_002.png"
+		},
+		{
+			"name": "run_left_003_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_003.png"
+		},
+		{
+			"name": "run_left_004_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_004.png"
+		},
+		{
+			"name": "run_left_005_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_005.png"
+		},
+		{
+			"name": "run_left_006_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_006.png"
+		},
+		{
+			"name": "run_left_007_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_007.png"
+		},
+		{
+			"name": "run_left_008_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_008.png"
+		},
+		{
+			"name": "run_left_009_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_009.png"
+		},
+		{
+			"name": "run_left_010_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_010.png"
+		},
+		{
+			"name": "run_left_011_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_011.png"
+		},
+		{
+			"name": "run_left_012_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_012.png"
+		},
+		{
+			"name": "run_left_013_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_013.png"
+		},
+		{
+			"name": "run_left_014_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_014.png"
+		},
+		{
+			"name": "run_left_015_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_015.png"
+		},
+		{
+			"name": "run_left_016_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_016.png"
+		},
+		{
+			"name": "run_left_017_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_017.png"
+		},
+		{
+			"name": "run_left_018_png",
+			"type": "image",
+			"url": "assets/Player/run/run_left_018.png"
+		},
+		{
+			"name": "run_right_001_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_001.png"
+		},
+		{
+			"name": "run_right_002_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_002.png"
+		},
+		{
+			"name": "run_right_003_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_003.png"
+		},
+		{
+			"name": "run_right_004_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_004.png"
+		},
+		{
+			"name": "run_right_005_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_005.png"
+		},
+		{
+			"name": "run_right_006_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_006.png"
+		},
+		{
+			"name": "run_right_007_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_007.png"
+		},
+		{
+			"name": "run_right_008_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_008.png"
+		},
+		{
+			"name": "run_right_009_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_009.png"
+		},
+		{
+			"name": "run_right_010_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_010.png"
+		},
+		{
+			"name": "run_right_011_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_011.png"
+		},
+		{
+			"name": "run_right_012_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_012.png"
+		},
+		{
+			"name": "run_right_013_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_013.png"
+		},
+		{
+			"name": "run_right_014_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_014.png"
+		},
+		{
+			"name": "run_right_015_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_015.png"
+		},
+		{
+			"name": "run_right_016_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_016.png"
+		},
+		{
+			"name": "run_right_017_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_017.png"
+		},
+		{
+			"name": "run_right_018_png",
+			"type": "image",
+			"url": "assets/Player/run/run_right_018.png"
+		},
+		{
+			"name": "Grid_Grass_jpg",
+			"type": "image",
+			"url": "assets/Map/Grid_Grass.jpg"
+		},
+		{
+			"name": "Grid_Road_jpg",
+			"type": "image",
+			"url": "assets/Map/Grid_Road.jpg"
+		},
+		{
+			"name": "Npc_Beauty_00001_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00001.png"
+		},
+		{
+			"name": "Npc_Beauty_00002_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00002.png"
+		},
+		{
+			"name": "Npc_Beauty_00003_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00003.png"
+		},
+		{
+			"name": "Npc_Beauty_00004_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00004.png"
+		},
+		{
+			"name": "Npc_Beauty_00005_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00005.png"
+		},
+		{
+			"name": "Npc_Beauty_00006_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00006.png"
+		},
+		{
+			"name": "Npc_Beauty_00007_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00007.png"
+		},
+		{
+			"name": "Npc_Beauty_00008_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00008.png"
+		},
+		{
+			"name": "Npc_Beauty_00009_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00009.png"
+		},
+		{
+			"name": "Npc_Beauty_00010_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00010.png"
+		},
+		{
+			"name": "Npc_Beauty_00011_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00011.png"
+		},
+		{
+			"name": "Npc_Beauty_00012_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00012.png"
+		},
+		{
+			"name": "Npc_Beauty_00013_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00013.png"
+		},
+		{
+			"name": "Npc_Beauty_00014_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00014.png"
+		},
+		{
+			"name": "Npc_Beauty_00015_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00015.png"
+		},
+		{
+			"name": "Npc_Beauty_00016_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00016.png"
+		},
+		{
+			"name": "Npc_Beauty_00017_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00017.png"
+		},
+		{
+			"name": "Npc_Beauty_00018_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00018.png"
+		},
+		{
+			"name": "Npc_Beauty_00019_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00019.png"
+		},
+		{
+			"name": "Npc_Beauty_00020_png",
+			"type": "image",
+			"url": "assets/Npc/Beauty/Npc_Beauty_00020.png"
+		}
+	]
+}

@@ -101,7 +101,7 @@ var Main = (function (_super) {
      * Create a game scene
      */
     p.createGameScene = function () {
-        var sky = this.createBitmapByName("NPC01_PNG");
+        var sky = this.createBitmapByName("bgImage");
         // this.addChild(sky);
         var stageW = this.stage.stageWidth;
         var stageH = this.stage.stageHeight;
@@ -158,7 +158,7 @@ var Main = (function (_super) {
         taskPanel.onShow();
     };
     p.NPCisClick = function (npc, dp) {
-        npc.onNPCClick();
+        npc.ClickOnNPC();
         this.addChild(dp);
     };
     /**

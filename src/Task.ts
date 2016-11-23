@@ -353,7 +353,7 @@ class NPC extends egret.DisplayObjectContainer implements Observer {
        }
     }
 
-    onNPCClick() {
+    ClickOnNPC() {
 
         var ruleOne:Function=(tasklist):Task => {
         var task:Task;

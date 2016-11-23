@@ -304,7 +304,7 @@ var NPC = (function (_super) {
             }
         }
     };
-    p.onNPCClick = function () {
+    p.ClickOnNPC = function () {
         var _this = this;
         var ruleOne = function (tasklist) {
             var task;

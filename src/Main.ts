@@ -185,7 +185,7 @@ class Main extends egret.DisplayObjectContainer {
      }
 
         NPCisClick (npc:NPC,dp:DialoguePanel){
-            npc.onNPCClick();
+            npc.ClickOnNPC();
             this.addChild(dp);
      
          }

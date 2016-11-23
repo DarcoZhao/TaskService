@@ -25,252 +25,7 @@
 //  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 //  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-//////////////////////////////////////////////////////////////////////////////////////、
-
-
-var playerAni =[ 
-    {tag:0,name: "Idle1_png"},
-    {tag:0,name: "Idle2_png"},
-    {tag:0,name: "Idle3_png"},
-    {tag:0,name: "Idle4_png"},
-
-
-    {tag:1,name: "Walk1_png"},
-    {tag:1,name: "Walk2_png"},
-    {tag:1,name: "Walk3_png"},
-    {tag:1,name: "Walk4_png"},
-
-
-
-    /*
-    {tag:0,name: "IdleAni1_png"},
-    {tag:0,name: "IdleAni2_png"},
-    {tag:0,name: "IdleAni3_png"},
-    {tag:0,name: "IdleAni4_png"},
-    {tag:0,name: "IdleAni5_png"},
-    {tag:0,name: "IdleAni6_png"},
-    {tag:0,name: "IdleAni7_png"},
-    {tag:0,name: "IdleAni8_png"},
-
-    {tag:1,name: "Walk (1)_png"},
-    {tag:1,name: "Walk (2)_png"},
-    {tag:1,name: "Walk (3)_png"},
-    {tag:1,name: "Walk (4)_png"},
-    {tag:1,name: "Walk (5)_png"},
-    {tag:1,name: "Walk (6)_png"},
-    {tag:1,name: "Walk (7)_png"},
-    {tag:1,name: "Walk (8)_png"},
-    {tag:1,name: "Walk (9)_png"},
-    {tag:1,name: "Walk (10)_png"},
-    {tag:1,name: "Walk (11)_png"},
-    {tag:1,name: "Walk (12)_png"},
-    {tag:1,name: "Walk (13)_png"},
-    {tag:1,name: "Walk (14)_png"},
-    {tag:1,name: "Walk (15)_png"},
-    {tag:1,name: "Walk (16)_png"},
-    {tag:1,name: "Walk (17)_png"},
-    {tag:1,name: "Walk (18)_png"},
-    {tag:1,name: "Walk (19)_png"},
-    {tag:1,name: "Walk (20)_png"},
-    {tag:1,name: "Walk (21)_png"},
-    {tag:1,name: "Walk (22)_png"},
-    {tag:1,name: "Walk (23)_png"},
-    {tag:1,name: "Walk (24)_png"},
-    {tag:1,name: "Walk (25)_png"},
-    {tag:1,name: "Walk (26)_png"},
-    {tag:1,name: "Walk (27)_png"},
-    {tag:1,name: "Walk (28)_png"},
-    {tag:1,name: "Walk (29)_png"},
-    {tag:1,name: "Walk (30)_png"},
-    {tag:1,name: "Walk (31)_png"},
-    {tag:1,name: "Walk (32)_png"},
-    {tag:1,name: "Walk (33)_png"},
-    {tag:1,name: "Walk (34)_png"},
-    {tag:1,name: "Walk (35)_png"},
-    {tag:1,name: "Walk (36)_png"},
-    {tag:1,name: "Walk (37)_png"},
-    {tag:1,name: "Walk (38)_png"},
-    */
-
-
-
-]
-
-
-
-class MyPlayer extends egret.DisplayObjectContainer {
-    
-    public nowState=0;
-    public MyPhoto:egret.Bitmap;
-    private MySta:StaMac=new StaMac;
-    public MoveSpeed:number=20;
-    public Modle:number=0;
-    public IdleAni:Array<egret.Texture>=new Array<egret.Texture>();
-    public MoveAni:Array<egret.Texture>=new Array<egret.Texture>();
-    public constructor(){
-       super();
-       this.MyPhoto=this.createBitmapByName("1_png");
-       this.addChild(this.MyPhoto);
-       this.LoadAni();
-       this.anchorOffsetX=this.MyPhoto.width/2;
-       this.anchorOffsetY=this.MyPhoto.height/2;
-   }
-
-    private LoadAni() {
-        var texture:egret.Texture ;
-        for(var i=0; i<playerAni.length; i++) {
-             texture= RES.getRes(playerAni[i].name);
-             if(playerAni[i].tag==0){this.IdleAni.push(texture); }
-             if(playerAni[i].tag==1){this.MoveAni.push(texture); }
-        }
-    }
-    
-//不太懂？？
-    public PlayAni(Ani:Array<egret.Texture>){
-
-        var count =0;
-        var Bit=this.MyPhoto;
-        var M=this.Modle;
-        //console.log("M:"+M);
-        var timer:egret.Timer=new egret.Timer(125, 0);
-        timer.addEventListener(egret.TimerEvent.TIMER,Play,this);
-        timer.start();
-
-        function Play(){      
-            Bit.texture=Ani[count];
-            if(count<Ani.length-1) {count++;}
-            else{count=0;}    
-            if(this.Modle!=M){
-                //console.log("tM:"+M+" nowM:"+this.Modle); 
-                timer.stop();
-            }    
-        }   
-  
-    }
-
-    public Move(Ps:Point[],xx:number,yy:number) {
-        var MS:MoveSta=new MoveSta(Ps,this);
-        this.MySta.Reload(MS);      
-    }
-    
-
-    public Idle() {
-       var IS:IdleSta=new IdleSta(this);
-       this.MySta.Reload(IS);
-   }
-
-/**
-     * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
-     * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
-     */
-    private createBitmapByName(name:string):egret.Bitmap {
-        var result = new egret.Bitmap();
-        var texture:egret.Texture = RES.getRes(name);
-        result.texture = texture;
-        return result;
-    }
-}
-
-interface  Sta {
-    Load();
-    exit();
-     
-}
-
-class MoveSta implements Sta{
-    private Tx:number;
-    private Ty:number;
-    private Player:MyPlayer;
-    private timer: egret.Timer;
-    private LeastTime:number;
-    public Path:Point[];
-    public nowNode:number;
-
-    public ArriveListener:egret.Sprite=new egret.Sprite();  //Sprite是一个显示列表节点
-   
-
-    constructor(Ps:Point[],Player:MyPlayer){
-        this.Path=Ps;
-        this.Player=Player;
-    }
-
-
-     Move() {
-          
-        this.nowNode++;
-        if(this.nowNode<this.Path.length){
-            var M=this.Player.Modle;     
-            this.Tx=this.Path[this.nowNode].x;
-            this.Ty=this.Path[this.nowNode].y;
-            var xx=this.Tx- this.Player.x;
-            var yy=this.Ty- this.Player.y;
-            if(xx>0){this.Player.scaleX=1;}else{this.Player.scaleX=-1;}
-            var zz=Math.pow(xx*xx+yy*yy,0.5);
-            var time:number=zz/this.Player.MoveSpeed;
-            this.timer = new egret.Timer(50, time);
-            this.LeastTime=time;
-            this.timer.start();
-        
-            this.timer.addEventListener(egret.TimerEvent.TIMER,()=>{
-                this.Player.x+=xx/time;
-                this.Player.y+=yy/time;
-                this.LeastTime--;
-                if( this.LeastTime<1) {
-                    this.timer.stop();
-                    if(this.LeastTime>-10) { 
-                    this.Move();
-                    //  var IFW:FinishWalkEvent=new FinishWalkEvent(FinishWalkEvent.FW);
-                    //   this.ArriveListener.dispatchEvent(IFW);
-                    }//意味着是走停不是逼停
-                }
-            }, this);
-        }else {
-            this.Player.Idle();
-            return;
-        }
-    }
-
-    Load() {
-        if(this.Path.length>1)
-        this.nowNode=1;
-        else this.nowNode=0;
-        this.Player.Modle++;
-        this.Player.PlayAni(this.Player.MoveAni);
-        this.Move();
-    }
-
-    exit() {
-        this.LeastTime=-10;
-    }
-}
-
-class IdleSta implements Sta{
-      private Player:MyPlayer;
-      constructor(Player:MyPlayer){  
-        this.Player=Player;
-    }  
-    Load() {
-        this.Player.Modle++;
-        this.Player.nowState=0;
-        this.Player.PlayAni(this.Player.IdleAni);
-    }
-    exit() {
-        console.log("exitIdle");
-    }
-
-}
- class StaMac {
-     private nowSta:Sta;
-     
-     public Reload(S:Sta):void{
-         if(this.nowSta){this.nowSta.exit();}  
-        this.nowSta=S;
-        this.nowSta.Load();
-     }
-}
-
-
-
+//////////////////////////////////////////////////////////////////////////////////////
 
 class Main extends egret.DisplayObjectContainer {
 
@@ -279,8 +34,6 @@ class Main extends egret.DisplayObjectContainer {
      * Process interface loading
      */
     private loadingView:LoadingUI;
-    private Player:MyPlayer;
-    private BgMap:Grid=new Grid();
 
     public constructor() {
         super();
@@ -364,41 +117,81 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private createGameScene():void {
-        var bg:egret.Bitmap = this.createBitmapByName("Sky_jpeg");
-        this.addChild(bg);
+        var sky:egret.Bitmap = this.createBitmapByName("bgImage");
+       // this.addChild(sky);
         var stageW:number = this.stage.stageWidth;
         var stageH:number = this.stage.stageHeight;
-        bg.width = stageW;
-        bg.height = stageH;
+        sky.width = stageW;
+        sky.height = stageH;
 
-        this.BgMap = new Grid();
-        this.Player = new MyPlayer();
-        printMap(this.BgMap);
-        this.addChild(this.BgMap);
+        this.Addtask();
 
-        this.addChild(this.Player);
-        this.Player.x= this.Player.y=20;
-        this.Player.Idle();
-        this.touchEnabled=true;
-        this.addEventListener(egret.TouchEvent.TOUCH_TAP,this.Click,this);
     }
 
-    private Click(evt:egret.TouchEvent):void {   
-        var sp:Point=new Point();
-        var ep:Point=new Point();
-        sp.x=this.Player.x;
-        sp.y=this.Player.y;
-        ep.x=evt.stageX;
-        ep.y=evt.stageY;
-        var As=new Astar(sp,ep);
-        this.Player.Move(As.Ps,10,10);  //?????
-        //this.Player.Move(As.Ps);  
-    }
+    Addtask() {
+        var taskser =TaskService.getInstance();
+        var dp=new DialoguePanel();
+        var npc_0 =new NPC(0,dp);
+        var npc_1 =new NPC(1,dp);
+        var taskPanel=new TaskPanel();
+        var TaskButton:egret.Bitmap=this.createBitmapByName("人物摁扭_png");
+        TaskButton.x=this.stage.stageWidth- TaskButton.width;
+        TaskButton.y=0;
+        var task0 =new Task(Tasks[0].id,Tasks[0].name,Tasks[0].desc,TaskStatus.ACCEPTABLE,Tasks[0].fromNPCid,Tasks[0].toNPCid,Tasks[0].condition,Tasks[0].nexttaskid);
+        var task1 =new Task(Tasks[1].id,Tasks[1].name,Tasks[1].desc,TaskStatus.UNACCEPTABLE,Tasks[1].fromNPCid,Tasks[1].toNPCid,Tasks[1].condition,Tasks[1].nexttaskid);
+        this.addChild(npc_0);
+        this.addChild(npc_1);
+        this.addChild(TaskButton);
+    
+        npc_0.x=26;
+        npc_0.y=133;
+        npc_1.x=326;
+        npc_1.y=333;
+        
+        taskser.observerList.push(taskPanel);
+        taskser.observerList.push(npc_0);
+        taskser.observerList.push(npc_1);
+        taskser.taskList.push(task0);
+        taskser.taskList.push(task1);
 
+        TaskButton.touchEnabled=true;
+        npc_0.touchEnabled=true;
+        npc_1.touchEnabled=true;
+        npc_0.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{this.NPCisClick(npc_0,dp)},this);
+        TaskButton.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>(this.showTaskPanel(taskPanel)),this);
+        npc_1.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{this.NPCisClick(npc_1,dp) },this);
+        
+        taskser.notify(taskser.taskList[0]);
 
+        var MB =new MonsterKillButton();
+        MB.photo=this.createBitmapByName("egretIcon");
+        var SS=new SenService();
+        var m:KillMonsterTaskCondition=task1.getMyCondition() ;
+        SS.observerList.push(m);
+        MB.mySS=(SS);
 
+        this.addChild(MB);
+        MB.addChild(MB.photo);
+        MB.x=0;
+        MB.y=this.stage.height-MB.photo.height;
+        MB.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{MB.onButtonClick(task1)},this);
+        MB.touchEnabled=true;
 
+        
+     }
+     showTaskPanel(taskPanel:TaskPanel){
+         this.addChild(taskPanel);
+         taskPanel.onShow();
+     }
 
+        NPCisClick (npc:NPC,dp:DialoguePanel){
+            npc.onNPCClick();
+            this.addChild(dp);
+     
+         }
+
+        
+    
 
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
@@ -411,61 +204,6 @@ class Main extends egret.DisplayObjectContainer {
         return result;
     }
 
-    /**
-     * 描述文件加载成功，开始播放动画
-     * Description file loading is successful, start to play the animation
-     */
-    //////////////////////////////////////////////////////////////////////////
-    /*
-    private startAnimation(result:Array<any>):void {
-        var self:any = this;
-
-        var parser = new egret.HtmlTextParser();
-        var textflowArr:Array<Array<egret.ITextElement>> = [];
-        for (var i:number = 0; i < result.length; i++) {
-            textflowArr.push(parser.parser(result[i]));
-        }
-
-        var textfield = self.textfield;
-        var count = -1;
-        var change:Function = function () {
-            count++;
-            if (count >= textflowArr.length) {
-                count = 0;
-            }
-            var lineArr = textflowArr[count];
-
-            self.changeDescription(textfield, lineArr);
-
-            var tw = egret.Tween.get(textfield);
-            tw.to({"alpha": 1}, 200);
-            tw.wait(2000);
-            tw.to({"alpha": 0}, 200);
-            tw.call(change, self);
-        };
-
-        change();
-    }
-
-    */
-    //////////////////////////////////////////////////////////////////////
-
-
-    /**
-     * 切换描述内容
-     * Switch to described content
-     */
-    private changeDescription(textfield:egret.TextField, textFlow:Array<egret.ITextElement>):void {
-        textfield.textFlow = textFlow;
-    }
 }
 
 
-class FinishWalkEvent extends egret.Event
-{
-    public static FW:string = "Finished";
-    public constructor(type:string, bubbles:boolean=false, cancelable:boolean=false)
-    {
-        super(type,bubbles,cancelable);
-    }
-}

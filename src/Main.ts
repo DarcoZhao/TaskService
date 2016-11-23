@@ -134,11 +134,11 @@ class Main extends egret.DisplayObjectContainer {
         var npc_0 =new NPC(0,dp);
         var npc_1 =new NPC(1,dp);
         var taskPanel=new TaskPanel();
-        var TaskButton:egret.Bitmap=this.createBitmapByName("人物摁扭_png");
+        var TaskButton:egret.Bitmap=this.createBitmapByName("任务_png");
         TaskButton.x=this.stage.stageWidth- TaskButton.width;
         TaskButton.y=0;
-        var task0 =new Task(Tasks[0].id,Tasks[0].name,Tasks[0].desc,TaskStatus.ACCEPTABLE,Tasks[0].fromNPCid,Tasks[0].toNPCid,Tasks[0].condition,Tasks[0].nexttaskid);
-        var task1 =new Task(Tasks[1].id,Tasks[1].name,Tasks[1].desc,TaskStatus.UNACCEPTABLE,Tasks[1].fromNPCid,Tasks[1].toNPCid,Tasks[1].condition,Tasks[1].nexttaskid);
+        var task0 =new Task(TaskLists[0].id,TaskLists[0].name,TaskLists[0].desc,TaskStatus.ACCEPTABLE,TaskLists[0].fromNPCid,TaskLists[0].toNPCid,TaskLists[0].condition,TaskLists[0].nexttaskid);
+        var task1 =new Task(TaskLists[1].id,TaskLists[1].name,TaskLists[1].desc,TaskStatus.UNACCEPTABLE,TaskLists[1].fromNPCid,TaskLists[1].toNPCid,TaskLists[1].condition,TaskLists[1].nexttaskid);
         this.addChild(npc_0);
         this.addChild(npc_1);
         this.addChild(TaskButton);
@@ -164,7 +164,7 @@ class Main extends egret.DisplayObjectContainer {
         taskser.notify(taskser.taskList[0]);
 
         var MB =new MonsterKillButton();
-        MB.photo=this.createBitmapByName("egretIcon");
+        MB.photo=this.createBitmapByName("Monster_png");
         var SS=new SenService();
         var m:KillMonsterTaskCondition=task1.getMyCondition() ;
         SS.observerList.push(m);

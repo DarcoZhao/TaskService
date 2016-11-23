@@ -6,8 +6,8 @@ var TaskPanel = (function (_super) {
         this.nowtaskList = [];
         this.stageH = 1136;
         this.stageW = 640;
-        this.myphoto = this.createBitmapByName("任务panel_png");
-        this.cancelButton = this.createBitmapByName("取消_png");
+        this.myphoto = this.createBitmapByName("Panel_png");
+        this.cancelButton = this.createBitmapByName("Okay_png");
         this.cancelButton.touchEnabled = true;
         this.addChild(this.myphoto);
         this.addChild(this.cancelButton);
@@ -47,8 +47,8 @@ var TaskPanel = (function (_super) {
             this.textField.push(tx);
             this.textField[i].text = this.nowtaskList[i].name + "  " + this.nowtaskList[i].desc + " " + this.nowtaskList[i].howso();
             this.addChild(this.textField[i]);
-            this.textField[i].x = 50;
-            this.textField[i].y = 100 + 100 * i;
+            this.textField[i].x = 100;
+            this.textField[i].y = 200 + 100 * i;
         }
     };
     p.onClose = function () {
@@ -77,12 +77,12 @@ var DialoguePanel = (function (_super) {
         this.stageW = 640;
         this.taskstatus = 0;
         this.isPanelShow = false;
-        this.photo = this.createBitmapByName("对话框_png");
-        this.x = 0;
-        this.y = this.stageH - this.photo.height;
-        this.acceptButton = this.createBitmapByName("接受_png");
-        this.cancelButton = this.createBitmapByName("取消_png");
-        this.finishButton = this.createBitmapByName("完成_png");
+        this.photo = this.createBitmapByName("Conversation_png");
+        this.acceptButton = this.createBitmapByName("Accept_png");
+        this.cancelButton = this.createBitmapByName("Concel_png");
+        this.finishButton = this.createBitmapByName("Okay_png");
+        this.x = this.stageW - this.acceptButton.width * 3 - this.x;
+        this.y = this.stageH - this.photo.height - 2 * this.acceptButton.height;
         this.acceptButton.x = this.finishButton.x = this.stageW - this.acceptButton.width * 3 - this.x;
         this.acceptButton.y = this.finishButton.y = this.stageH - this.acceptButton.height * 2 - this.y;
         this.cancelButton.x = this.stageW - this.acceptButton.width * 1.5 - this.x;
@@ -275,30 +275,30 @@ var NPC = (function (_super) {
     __extends(NPC, _super);
     function NPC(i, dp) {
         _super.call(this);
-        this.id = NPCs[i].id;
-        this.name = NPCs[i].name;
-        this.photo = this.createBitmapByName(NPCs[i].photo);
+        this.id = NPCLists[i].id;
+        this.name = NPCLists[i].name;
+        this.photo = this.createBitmapByName(NPCLists[i].photo);
         this.addChild(this.photo);
-        this.emoji = this.createBitmapByName(emojis[0].name);
+        this.emoji = this.createBitmapByName(HintLists[0].name);
         this.addChild(this.emoji);
         this.emoji.x += this.photo.width / 5;
         this.emoji.y -= this.photo.height / 4;
         this.panel = dp;
-        this.wrod = NPCs[i].wrod;
+        this.wrod = NPCLists[i].word;
     }
     var d = __define,c=NPC,p=c.prototype;
     p.onChange = function (task) {
         if (task.fromNPCid == this.id) {
             if (task.status == 1)
-                this.emoji.texture = RES.getRes(emojis[1].name);
+                this.emoji.texture = RES.getRes(HintLists[1].name);
             if (task.status >= 2)
-                this.emoji.texture = RES.getRes(emojis[0].name);
+                this.emoji.texture = RES.getRes(HintLists[0].name);
         }
         if (task.toNPCid == this.id && task.status > 1) {
             var i;
             for (i = 0; true; i++) {
                 if (TaskStatus[TaskStatus[i]] == task.status) {
-                    this.emoji.texture = RES.getRes(emojis[i].name);
+                    this.emoji.texture = RES.getRes(HintLists[i].name);
                     break;
                 }
             }
@@ -442,19 +442,19 @@ var TaskStatus;
     TaskStatus[TaskStatus["CAN_SUBMIT"] = 3] = "CAN_SUBMIT";
     TaskStatus[TaskStatus["SUBMITTED"] = 4] = "SUBMITTED";
 })(TaskStatus || (TaskStatus = {}));
-var Tasks = [
-    { id: "task_00", name: "瞎**乱点", desc: "请跟右边的小女孩对话", status: 1, fromNPCid: "npc_0", toNPCid: "npc_1", condition: new NPCTalkTaskCondition(), nexttaskid: "task_01" },
-    { id: "task_01", name: "使劲点，点！", desc: "请点击小怪物", status: 0, fromNPCid: "npc_1", toNPCid: "npc_1", condition: new KillMonsterTaskCondition(10), nexttaskid: null },
+var TaskLists = [
+    { id: "task_00", name: "First task", desc: "请找到小明", status: 1, fromNPCid: "npc_0", toNPCid: "npc_1", condition: new NPCTalkTaskCondition(), nexttaskid: "task_01" },
+    { id: "task_01", name: "Second task", desc: "请杀死怪物", status: 0, fromNPCid: "npc_1", toNPCid: "npc_1", condition: new KillMonsterTaskCondition(10), nexttaskid: null },
 ];
-var NPCs = [
-    { id: "npc_0", name: "屠龙宝刀点击也不送", wrod: "哦，天啊，去搞任务好吗？", photo: "npc0_01_png" },
-    { id: "npc_1", name: "他说的是真的", wrod: "再这样没事儿点我算你骚扰哦", photo: "npc1__01_png" },
+var NPCLists = [
+    { id: "npc_0", name: "小红", word: "你好！", photo: "NPC01_png" },
+    { id: "npc_1", name: "小明", word: "很高兴认识你！", photo: "NPC02_png" },
 ];
-var emojis = [
+var HintLists = [
     { name: "" },
-    { name: "叹号_png" },
-    { name: "问号灰_png" },
-    { name: "问号黄_png" },
+    { name: "感叹_png" },
+    { name: "问号01_png" },
+    { name: "问号02_png" },
     { name: "" },
 ];
-//# sourceMappingURL=Task.js.map
+//# sourceMappingURL=task.js.map
